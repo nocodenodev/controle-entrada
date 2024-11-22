@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
+
+:root {
+  --first-color: hsl(230, 100%, 50%);
+  --second-color: hsl(150, 100%, 38%);
+  --title-color: hsl(230, 24%, 12%);
+  --text-color: hsl(230, 4%, 60%);
+  --gray-color: hsl(230, 24%, 88%);
+  --border-color: hsl(230, 4%, 92%);
+  --body-color: hsl(230, 100%, 98%);
+  --container-color: hsl(0, 0%, 100%);
+
+  --body-font: "Syne", sans-serif;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-mask {
+  width: 100px;
+  height: 100px;
+  background-color: var(--gray-color);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.card-mask img {
+  width: 95px;
+}
+
+.card-content {
+  position: relative;
+  width: calc(100vw - 3rem);
+  background-color: var(--container-color);
+  box-shadow: 0 16px 32px hsla(230, 50%, 20%, 0.1);
+  padding: 2rem 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.card-content .card-fita {
+  position: absolute;
+  top: -170px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 200px;
+}
+
+.card-fita img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-header span {
+  color: var(--title-color);
+  font-weight: 500;
+}
+
+.card-credential {
+  display: flex;
+  column-gap: 0.75rem;
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem;
+}
+
+.card-data {
+  text-align: center;
+}
+
+.card-name {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.card-profession {
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.card-qrcode {
+  height: 200px;
+  width: 200px;
+  margin-inline: auto;
+}
+
+#qrcode {
+  width: 100%;
+  height: 100%;
+}
+
+.card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  color: var(--first-color);
+  font-weight: 500;
+}
+
+@media screen and (min-width: 540px) {
+  .card-content {
+    width: 380px;
+    padding-inline: 2rem;
+  }
+}
+
+/* Css da tela da entradas */
+table {
+  font-weight: 400;
+  min-width: 420px;
+  width: 100%;
+  color: black;
+  border-radius: 50px;
+
+  caption {
+    color: black;
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+}
+
+thead {
+  display: none;
+  font-weight: 500;
+}
+
+tbody {
+  tr {
+    border: 1px solid black;
+    display: block;
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+
+  td {
+    display: block;
+    font-weight: 500;
+    padding: 5px;
+    position: relative;
+    text-align: right;
+  }
+
+  td:before {
+    color: #8a8a87;
+    content: attr(data-label);
+    font-weight: 400;
+    left: 5px;
+    position: absolute;
+  }
+}
+
+@media all and (min-width: 768px) {
+  table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    max-width: 992px;
+    text-align: left;
+    width: 100%;
+
+    thead {
+      display: table-header-group;
+
+      th {
+        padding: 10px;
+        border: 1px solid black;
+      }
+    }
+
+    tbody {
+      font-size: 0.875em;
+
+      tr {
+        border: none;
+        display: table-row;
+
+        td {
+          display: table-cell;
+          font-weight: 400;
+          padding: 10px;
+          text-align: left;
+          border: 1px solid black;
+
+          button {
+            display: inline-block;
+            padding: 10px 15px;
+            position: initial;
+            transform: translate(0);
+            width: auto;
+          }
+
+          &:before {
+            display: none;
+          }
+
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Estilo da tela do Scanner */
+
+#reader__dashboard_section > div  {
+  display: flex !important; 
+  width: 100% !important; 
+  padding: 20px !important;
+  justify-content: center !important;
+}
+
+#reader__dashboard_section > div > div {
+  width: 100%;
+}
+
+#reader__dashboard_section span, #reader__dashboard_section select {
+  display: block;
+  margin-top: 10px;
+  margin-inline: auto;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+  border-radius: 6px;
+  padding: 10px 50px;
+}
+
+#reader__dashboard_section button {
+  height: 55px;
+  width: 100%;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(130, 106, 251);
+}
+#reader__dashboard_section button:hover {
+  background: rgb(88, 56, 250);
+}
+
+#html5-qrcode-anchor-scan-type-change {
+  border: none;
+  background-color: transparent;
+  color: #007bff;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+#html5-qrcode-anchor-scan-type-change:hover {
+  text-decoration: underline !important;
+  color: #0056b3;
+}
+
+.hide {
+  display: none;
+}
+
+#message {
+  color: black;
+  text-align: center;
+  margin: 6px;
+}
